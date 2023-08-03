@@ -1,0 +1,942 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background: url(../Images/robert-downey-jr.jpg) 50% no-repeat fixed,
+    url(../Images/pw_maze_black_@2X.png);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+li{
+  list-style: none;
+}
+.highlight{
+  position: relative;
+  border-radius: 10px;
+  width: 10%;
+  transition: all .5s;
+}
+.highlight::after{
+  content: '';
+  background: linear-gradient(-45deg,#ed1c94,#ffec17);
+  width: 100%;
+  height: 10%;
+  left: 0;
+  bottom: -3px;
+  position: absolute;
+  border-radius: 10px;
+  animation: fullwidth 1s ease-in-out .2s forwards;
+}
+/* Header */
+.header {
+  margin: 0rem auto;
+  height: 117rem;
+  width: 117rem;
+  position: relative;
+}
+.header--main {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding-top: 1.7rem;
+  height: 10rem;
+}
+.header--main > h1 {
+  margin: 0;
+  color: #acb9bb;
+  letter-spacing: 0.8rem;
+  font-size: 2.88rem;
+  animation: colorChange 8s infinite ease;
+}
+.header--main > h3 {
+  color: #acb9bb;
+  letter-spacing: 0.8rem;
+  font-size: 1.6rem;
+  margin-top: 0.72rem;
+}
+.header-img {
+  background: url(../Images/header-bg.png) no-repeat scroll;
+  background-position: -70.4rem -3.2rem;
+  width: 100%;
+  height: 80%;
+}
+
+/* Quotes */
+
+.quotes {
+  text-align: center;
+  background-color: #a6d0dd;
+  border-radius: 6%;
+  overflow: hidden;
+  width: 40%;
+  font-size: 2.08rem;
+  float: right;
+  margin: 4rem 2.4rem 0rem 0rem;
+  height: fit-content;
+  padding: 2.2rem;
+  box-shadow: -8px 0px 5px #ff6969, 0px 10px 5px #ffff00;
+  clear: right;
+  position: relative;
+  animation-name: fade-in-right;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.quotes::after{
+  content: '';
+  background:rgba(255, 255, 255, .6);
+  width: 150%;
+  height: 80%;
+  position: absolute;
+  top: -25rem;
+  right: -35rem;
+  transform: skewX(25deg) rotate(40deg);
+  transition: all .8s ease-in-out;
+}
+
+.quotes:hover::after{
+  right: 20rem;
+  top: 25rem;
+}
+
+.quotes > h2 {
+  float: right;
+  font-size: 1.92rem;
+  text-transform: capitalize;
+  color: #66347f;
+}
+.quotes-highlight {
+  color: #ff6969;
+}
+
+/* Carousel */
+.carousel {
+  z-index: -3;
+  width: 95%;
+  height: 55rem;
+  margin: 3.5rem auto 20rem auto;
+}
+.carousel-curve-border {
+  border-radius: 2.8rem;
+}
+.carousel-item {
+  height: 55rem;
+  width: 100%;
+  transition:all .6s ease-in-out right;
+}
+.carousel-item-first {
+  background-color: rgba(166, 208, 221, 0.8);
+}
+.carousel-item-second {
+  background-color: rgba(255, 105, 105, 0.8);
+}
+.carousel-item-third {
+  background-color: rgba(255, 211, 176, 0.8);
+}
+.carousel-item-fourth {
+  background-color: rgba(0, 170, 206, 0.7);
+}
+.carousel-caption > h3 {
+  text-shadow: 4px 4px 5px black;
+  font-size: 2.8rem;
+}
+.carousel-caption > p {
+  font-size: 3.2rem;
+  margin: 0px;
+  text-shadow: 4px 4px 5px black;
+}
+.carousel-caption > div > img {
+  width: 15rem;
+  border-radius: 50%;
+  position: relative;
+  top: 10%;
+  margin-bottom: 0.2rem;
+}
+.carousel-caption > hr {
+  border-style: none;
+  border-top: dotted;
+  border-width: 0.7rem;
+  border-color: black;
+  width: 10%;
+  margin: 1.6rem auto;
+}
+.carousel-caption button {
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  margin: 1rem 0rem 2rem 0rem;
+}
+.carousel-caption button > a {
+  text-decoration: none;
+  color: white;
+}
+/* story_image */
+
+.story__image{
+  margin: auto;
+  position: relative;
+  width: 15rem;
+}
+.Image__caption{
+  text-transform: uppercase;
+  width: 10rem;
+  margin: auto;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,150%);
+  font-size: 1.8rem;
+  transition: all .3s;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 10px 10px black;
+}
+.story__image:hover .Image__caption{
+  opacity: 1;
+  visibility:visible;
+  transform: translate(-50%,-50%);
+}
+.story__image .story__rdj{
+  transition: all .3s;
+}
+.story__image:hover .story__rdj{
+  filter: blur(3px) brightness(90%);
+  transform: scale(.95);
+}
+/* Popup */
+
+.popup{
+  background-color: rgba(0, 0, 0, .8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  visibility: hidden;
+  transform: translate(-50%,-50%);
+  z-index: 1500;
+  overflow: auto;
+}
+.popup_header{
+  text-align: center;
+  color: #737171;
+  overflow: auto;
+}
+.popup_header > h1{
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+}
+.popup_header > h3{
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.popup_body{
+  width: 95%;
+  margin: auto;
+}
+.popup_footer{
+  font-size: 1.8rem;
+  /* float: right; */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+}
+.popup_footer > button{
+  padding: .7rem;
+  text-decoration: none;
+  border: none;
+  border: 2px solid rgba(169,182,185,.8);
+  border-radius: 10rem;
+  background-color: #eee;
+}
+.popup_footer > ul > li:not(:last-child){
+  margin-right: 2rem;
+}
+.popup1{
+  background-color: #eee;
+  height: 84.7rem;
+  width: 76.8rem;
+  position: fixed;
+  top:50%;
+  border-radius: 1rem;
+  left: 50%;
+  opacity: 0;
+  transform:  translateX(-50%) translateY(-200%);
+  transition: all .5s;
+  z-index: 2000;
+}
+.popup1 .popup1__content > span{
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  cursor: pointer;
+  transform: translate(-50%,-50%);
+}
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.footer-social-icons {
+  display: flex;
+}
+.footer-social-icons a {
+  text-decoration: none;
+  height: 80px;
+  width: 80px;
+  color: #000;
+  text-align: center;
+  margin: 0 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+.footer-social-icons a .fa-brands {
+  font-size: 40px;
+  line-height: 80px;
+  z-index: 10;
+  position: relative;
+  transition: color 0.5;
+}
+.footer-social-icons a::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -90px;
+  left: 0;
+  background-color: #c4302b;
+}
+.footer-social-icons >a:nth-child(1){
+  opacity: 0;
+  animation-duration: .3s;
+  transform: translateY(10rem);
+}
+.footer-social-icons >a:nth-child(2){
+  opacity: 0;
+  transform: translateY(15rem);
+  animation-duration: .6s;
+}
+.footer-social-icons >a:nth-child(3){
+  opacity: 0;
+  transform: translateY(20rem);
+  animation-duration: .9s;
+}
+.footer-social-icons >a:nth-child(4){
+  opacity: 0;
+  animation-duration: 1.2s;
+  transform: translateY(25rem);
+}
+
+.footer-social-icons .face::after {
+  background-color: #3b5998;
+}
+.footer-social-icons .twit::after {
+  background-color: #00aace;
+}
+.footer-social-icons .insta::after {
+  background: url(../Images/Insta-background.png) 25% repeat;
+}
+.footer-social-icons a:hover::after {
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+.footer-social-icons a:hover .fa-brands {
+  color: white;
+}
+
+.footer-social-icons .face:hover,
+.footer-social-icons .you:hover,
+.footer-social-icons .twit:hover,
+.footer-social-icons .insta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Personal_popup */
+
+#Personal{
+  overflow: auto;
+}
+.Personal_popup_body{
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 24rem;
+  padding-bottom: 2rem;
+  background-color: rgba(169,182,185,.4);
+}
+
+.popup_item{
+  width: 95%;
+  margin: auto;
+  
+}
+.popup_item > h1{
+  padding: 10px;
+  border-bottom: 3px solid rgba(202,252,254,.9);
+  margin-bottom: 2rem;
+  transition: all .1s;
+}
+.popup_item > h1:hover{
+  font-size: 2.7rem;
+}
+.popup_item > hr{
+  color: #337ab7;
+  padding-bottom: 2rem;
+}
+.popup_item_reveal{
+  display: none;
+  border-bottom: 3px solid rgba(202,252,254,.9);
+  padding-bottom: 2rem;
+}
+.popup_item_reveal> img{
+  width: 100%;
+}
+.popup_item_reveal > p{
+  font-size: 1.8rem;
+  padding: 2rem;
+  background-color: rgba(202,252,254,.2);
+}
+.popup_item_reveal > p > span{
+  color: #a34a52;
+}
+
+.popup_item_reveal_click{
+  display: block;
+}
+/* Music_popup */
+.Music_popup{
+  background: linear-gradient(to bottom,#fff 0,#cecece 48%,#d8d8d8 66%,#fff 98%);
+}
+.Music_popup_header > img{
+  width: 50%;
+  height: 50%;
+}
+.Music_popup_body > p{
+  font-size: 1.75rem;
+  padding-left: 1rem;
+  border-left: 5px solid white;
+}
+/* Filmography_popup */
+.filmography_popup_body{
+  width: 100%;
+  margin-bottom: 10rem;
+  position: relative;
+}
+.filmography > hr{
+  position: absolute;
+  bottom: 2rem;
+}
+.filmography__ironman{
+  position: relative;
+  width: 100%;
+  min-height: 20rem;
+  background-color: rgba(169, 182, 185, .8);
+  padding: 2%;
+  margin-bottom: 2rem;
+}
+.filmography__ironman-content{
+  text-align: center;
+  background-position: 10% 30%;
+  background-size: cover;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  background-image: linear-gradient(to bottom,#000 0,transparent 100%),url("https://orcraccoon.github.io/RDJ_Tribute/img/ironman.jpg");
+  flex-direction: column;
+}
+.filmography__ironman-content > h5{
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-weight: bold;
+  margin:2rem auto;
+}
+.filmography__ironman-content > button{
+  padding: .6rem 3.2rem;
+  margin: auto;
+  background-color: black;
+  border-radius: 5rem;
+  margin-bottom: 1rem;
+}
+.filmography__ironman-content > button > a{
+  color: white;
+  font-size: 1.3rem;
+}
+.text{
+  display: flex;
+}
+.text > p{
+  width: 60%;
+  font-size: 1.6rem;
+  color: #c3c3c3;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, .47);
+}
+.text > ul{
+  width: 35%;
+  border-left: 2px solid #eee;
+  color: #c3c3c3;
+  font-size: 1.6rem;
+  background-color: rgba(0, 0, 0, .47);
+  text-align: left;
+  margin-left: 2rem;
+}
+.text > ul > li:first-child{
+  margin-top: 3rem;
+}
+.text > ul > li{
+  margin-bottom: 2rem;
+  margin-left: 0px;
+}
+
+.filmography__avengers{
+  position: relative;
+  width: 100%;
+  min-height: 2rem;
+  background-color: #fff;
+  padding: 2%;
+}
+.filmography__avengers-content{
+  text-align: center;
+  background-position: 10% 30%;
+  background-size: cover;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  background-image: linear-gradient(to bottom,#000 0,transparent 100%),url("https://orcraccoon.github.io/RDJ_Tribute/img/avengers.jpg");
+  flex-direction: column;
+  background-position: 100%;
+}
+
+.filmography__avengers-content > h5{
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-weight: bold;
+  margin:2rem auto;
+}
+
+.filmography__avengers-content > button{
+  padding: .6rem 3.2rem;
+  margin: auto;
+  background-color: black;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+.filmography__avengers-content > button > a{
+  color: white;
+  font-size: 1.3rem;
+}
+.filmography__judge{
+  position: relative;
+  width: 100%;
+  min-height: 20rem;
+  background-color: #fff;
+  padding: 2%;
+}
+.filmography__judge > button{
+  display: block;
+  margin: auto;
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  line-height: inherit;
+}
+.filmography__judge > hr{
+  margin-bottom: 65px;
+}
+.filmography__judge > ul {
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+}
+.filmography__judge > ul > li{
+  list-style: disc;
+}
+.filmography__judge > ul > li > a{
+  /* #23527c */
+  color: #337ab7;
+  position: relative;
+}
+.filmography__judge > ul > li > a::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #337ab7;
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.filmography__judge > ul > li > a:hover{
+  color: #23527c;
+}
+.filmography__judge > ul > li > a:hover::after{
+  width: 100%;
+}
+.filmography__judge > ul > li > span{
+  color: #a34a52;
+  position: relative;
+}
+
+.filmography__judge > ul > li > span::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a34a52;
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.filmography__judge > ul > li > span:hover::after{
+  width: 100%;
+}
+.filmography__judge-content{
+  text-align: center;
+  background-position: 10% 30%;
+  background-size: cover;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  background-image: linear-gradient(to bottom,#000 0,transparent 100%),url("https://orcraccoon.github.io/RDJ_Tribute/img/avengers.jpg");
+  flex-direction: column;
+  background-position: 100%;
+}
+.filmography_footer{
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+}
+.filmography__judge-content > h5{
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-weight: bold;
+  margin:20px auto;
+}
+
+.filmography__judge-content > button{
+  padding: 6px 32px;
+  margin: auto;
+  background-color: black;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+.filmography__judge-content > button > a{
+  color: white;
+  font-size: 1.3rem;
+}
+
+.reveal_movies{
+  display: none;
+}
+/* Biography_popup */
+.new{
+  background-image: linear-gradient(120deg,transparent 0%,transparent 50%,#fff  50%);
+  background-size: 0%;
+  background-size: 250%;
+  transition: all .3s;
+  border-radius: 5rem;
+}
+.new:hover{
+  background-position: 100%;
+}
+.new > a > span{
+  transition: all .4s ;
+}
+.new:hover > a >span{
+  color: #333;
+}
+#particles-js{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+
+.up{
+  animation-name: up;
+  animation-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-fill-mode: forwards;
+}
+.down{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+.up2{
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-200%);
+}
+.navtabs{
+  width: 100%;
+  margin: auto;
+}
+.navtabs > ul{
+  display: flex;
+  margin-top: 3rem;
+  list-style: none;
+  font-size: 2rem;
+  padding-left: 0px;
+  flex-wrap: wrap;
+}
+.navtabs > ul > li > a:link,.navtabs > ul > li > a:visited{
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+  transition: all .2s ease;
+  display: block;
+}
+.navtabs > ul > li > a:focus,.navtabs > ul > li > a:hover{
+  background-color: red;   
+}
+
+.navtabs > ul > li > a:hover{
+  color: #a34a52;
+  background-color: #eee;
+  border-top: 2px solid #a34a52;
+}
+.background{
+  width: 100%;
+  height: 20rem;
+  background-position: 50%     30%;
+}
+.background--early{
+  background-image: linear-gradient(to top,#fff 1%,transparent 90%),url("https://orcraccoon.github.io/RDJ_Tribute/img/early.jpg");
+}
+.background--Rising{
+  background-image: linear-gradient(to top,#fff 1%,transparent 90%),url("https://orcraccoon.github.io/RDJ_Tribute/img/chaplin.jpg");
+}
+.background--Drugs{
+  background-image: linear-gradient(to top,#fff 1%,transparent 90%),url("https://orcraccoon.github.io/RDJ_Tribute/img/ally.jpg");
+}
+.background--Turning{
+  background-image: linear-gradient(to top,#fff 1%,transparent 90%),url("https://orcraccoon.github.io/RDJ_Tribute/img/moscow.jpg");
+}
+.tab-pane > p{
+  font-size: 1.55rem;
+  line-height: 2.5rem;
+  display: block;
+  padding: .5rem .5rem 2rem;
+  background-color: rgba(136,198,206,.2);
+
+}
+.tab-pane{
+  display: none;
+}
+.active{
+  display: block;
+}
+.active2{
+cursor: default;
+background-color: #fff;
+color: #fff;
+border: 2px solid #ddd;
+border-bottom-color: transparent;
+}
+ /* Keyframes */
+
+@keyframes up {
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+@keyframes fullwidth {
+  0%{
+      width: 0%;
+  }
+  100%{
+      width: 100%;
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    left: 200px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    right: 200px;
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    top: 200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    bottom: 200px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #acb9bb;
+  }
+  20% {
+    color: #ff6969;
+  }
+  40% {
+    color: #b9e9fc;
+  }
+  60% {
+    color: #b0daff;
+  }
+  100% {
+    color: #feff86;
+  }
+}
+
+@keyframes animate {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 684px) {
+  .carousel-caption > p {
+    margin-bottom: 0px;
+    font-size: 1.76rem;
+  }
+  .third-quote {
+    grid-area: 3/1/3/6;
+    display: none;
+  }
+  .second-quote {
+    grid-area: 2/1/2/6;
+  }
+}
+
+
+@media (max-width: 769px) {
+  .header-container1 {
+    width: 100%;
+  }
+  .quotes {
+    bottom: -37.3rem;
+  }
+  .quotes-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-column-gap: 44px;
+  }
+  .first-quote {
+    display: block;
+    opacity: 1;
+    grid-area: 1 / 1 / 2 / 6;
+    width: 100%;
+  }
+  .second-quote {
+    grid-area: 2 / 1 / 3 / 4;
+    width: 100%;
+  }
+  .third-quote {
+    grid-area: 2 / 4 / 3 / 6;
+    width: 100%;
+    height: 82%;
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    width: 77rem;
+  }
+  .quotes > p {
+    font-size: 1.92rem;
+  }
+  .quotes > h2 {
+    font-size: 1.6rem;
+  }
+  .carousel-caption > p {
+    font-size: 2.4rem;
+  }
+  .popup1{
+    width: 56.7rem;
+}
+}
+
+@media (max-width: 1200px) {
+  .header {
+    width: 100rem;
+  }
+}
+
+
+
