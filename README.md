@@ -44,7 +44,7 @@ If you have any questions or feedback regarding this tribute page, feel free to 
 
 - Email: prabhat.kumar.hisar@gmail.com
 - Twitter: [@Prabhat_The_Dev](https://twitter.com/Prabhat_The_Dev)
-- Linkedin: [linkedin.com/in/prabhat-kumar](https://www.linkedin.com/in/prabhat-kumar-765847286/)
+- Linkedin: [linkedin.com/in/prabhat-kumar](www.linkedin.com/in/prabhatkumar-dev)
 
 
 
